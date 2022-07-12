@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Pagination = ({
+const Pagination = ({
   postsPerPage,
   setPostsPerPage,
   totalPosts,
@@ -19,6 +19,10 @@ export const Pagination = ({
     });
   };
 
+  const handleChange = (e) => {
+    setPostsPerPage(e.target.value);
+  };
+
   return (
     <nav className="d-flex justify-content-between align-items-center">
       <ul className="pagination">
@@ -30,10 +34,12 @@ export const Pagination = ({
           </li>
         ))}
       </ul>
-      <select onChange={(e) => setPostsPerPage(e.target.value)}>
+      <select onChange={handleChange}>
         <option value="">Posts per page</option>
         {selectPerPage()}
       </select>
     </nav>
   );
 };
+
+export default Pagination;

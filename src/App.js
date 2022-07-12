@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import { Posts } from "./components/Posts";
-import { Pagination } from "./components/Pagination";
+import Posts from "./components/Posts";
+import Pagination from "./components/Pagination";
 
 const App = () => {
   const [posts, setPosts] = useState([]);

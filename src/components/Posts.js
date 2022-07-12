@@ -1,15 +1,15 @@
-import React, { Fragment } from "react";
+import React from "react";
 
-export const Posts = ({ posts, loading }) => {
+const Posts = ({ posts, loading }) => {
   if (loading) {
     return (
-      <Fragment>
+      <>
         <h2>Loading...</h2>
-      </Fragment>
+      </>
     );
   }
   return (
-    <Fragment>
+    <>
       <ul className="list-group mb-4">
         {posts.map((post) => (
           <li key={post.id} className="list-group-item">
@@ -17,6 +17,8 @@ export const Posts = ({ posts, loading }) => {
           </li>
         ))}
       </ul>
-    </Fragment>
+    </>
   );
 };
+
+export default Posts;
